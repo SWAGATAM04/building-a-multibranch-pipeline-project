@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                sh 'npm install --no-optional weex-toolkit -g'
+                sh 'npm install yarn'
             }
         }
         stage('Test') {
