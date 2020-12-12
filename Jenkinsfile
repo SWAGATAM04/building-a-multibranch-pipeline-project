@@ -1,12 +1,10 @@
-pipeline {
-  agent any
-  stages {
-    node('build'){
-     stage('Build') {
-       steps {
-         sh 'sudo docker ps -a'
-      }
+node (label: 'build'){
+    stage('DockerContainer') {
+        if (env.BRANCH_NAME == 'master') {
+            sudo docker ps -a
+        } else {
+            echo 'Please check branch'
+        }
     }
-   }
-  }
 }
+
