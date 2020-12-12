@@ -1,6 +1,6 @@
 node (label: 'build'){
     stage('DockerContainer') {
-           sh "sudo docker ps -a"
+           bat "sudo docker ps -a"
         } 
 }
 
