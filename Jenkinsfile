@@ -1,11 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      steps {
-        sh 'sudo docker ps -a'
+    node('build'){
+     stage('Build') {
+       steps {
+         sh 'sudo docker ps -a'
       }
     }
-
+   }
   }
 }
